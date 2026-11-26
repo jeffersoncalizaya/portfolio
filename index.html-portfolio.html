@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jefferson Calizaya – Desenvolvedor júnior</title>
+<meta name="description" content="Portfólio de Jefferson Lindomar Ajhuacho Calizaya, desenvolvedor júnior formado em Ciências da Computação. Python, SQL, HTML, CSS e JavaScript.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #1f3a5f;
+  --navy-ink: #f2f6fb;
+  --navy-soft: #b9cbe0;
+  --bg: #f6f8fb;
+  --surface: #ffffff;
+  --ink: #14202e;
+  --muted: #53647a;
+  --line: #d5dee8;
+  --accent: #2f6aa3;
+  --font: "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1722; --surface: #162131; --ink: #e6ecf3; --muted: #9fb0c4; --line: #26364b; --accent: #7fb2e5;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f1722; --surface: #162131; --ink: #e6ecf3; --muted: #9fb0c4; --line: #26364b; --accent: #7fb2e5;
+}
+*, *::before, *::after { box-sizing: inherit; }
+html { scroll-padding-top: env(safe-area-inset-top, 0px); background: var(--bg); }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+body { margin: 0; font-family: var(--font); font-size: 17px; line-height: 1.65; color: var(--ink); background: var(--bg); }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+.layout { display: grid; grid-template-columns: minmax(300px, 380px) 1fr; min-height: 100%; }
+.side { background: var(--navy); color: var(--navy-ink); padding: 56px 40px; }
+.side-inner { position: sticky; top: 48px; }
+.side h1 { margin: 0; font-size: clamp(2.6rem, 5vw, 3.6rem); line-height: 1.02; font-weight: 800; letter-spacing: -0.02em; }
+.role { margin: 18px 0 6px; font-size: 1.15rem; font-weight: 700; }
+.where { margin: 0; color: var(--navy-soft); font-size: 0.98rem; }
+.side nav { margin-top: 40px; display: grid; gap: 10px; }
+.side nav a { color: var(--navy-ink); text-decoration: none; font-weight: 500; width: fit-content; border-bottom: 1px solid transparent; }
+.side nav a:hover { border-bottom-color: var(--navy-soft); }
+.side .links { margin-top: 40px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.22); display: grid; gap: 8px; font-size: 0.98rem; }
+.side .links a { color: var(--navy-ink); }
+.side a:focus-visible { outline-color: #fff; }
+
+main { padding: 56px clamp(24px, 6vw, 88px) 72px; max-width: 880px; }
+section { margin-bottom: 56px; }
+h2 { margin: 0 0 18px; font-size: 1.5rem; font-weight: 800; letter-spacing: -0.01em; }
+h3 { margin: 0; font-size: 1.1rem; font-weight: 700; }
+p { margin: 0 0 14px; max-width: 66ch; }
+.lead { font-size: 1.22rem; line-height: 1.6; }
+
+.project { background: var(--surface); border: 1px solid var(--line); border-left: 6px solid var(--navy); border-radius: 6px; padding: 26px 28px; }
+.project p:last-child { margin-bottom: 0; }
+.tech { color: var(--muted); font-size: 0.95rem; }
+.btn { display: inline-block; margin-top: 4px; padding: 10px 18px; background: var(--navy); color: #fff; font-weight: 700; text-decoration: none; border-radius: 4px; }
+.btn:hover { background: #2a4d7c; }
+.btn:focus-visible { outline-color: var(--accent); }
+
+.job { display: grid; grid-template-columns: 150px 1fr; gap: 6px 24px; padding: 18px 0; border-top: 1px solid var(--line); }
+.job:last-of-type { border-bottom: 1px solid var(--line); }
+.when { color: var(--muted); font-size: 0.95rem; padding-top: 2px; }
+.job ul { margin: 8px 0 0; padding-left: 18px; }
+.job li { margin-bottom: 4px; max-width: 62ch; }
+.org { color: var(--muted); font-weight: 500; }
+
+dl { margin: 0; display: grid; grid-template-columns: 170px 1fr; gap: 10px 24px; }
+dt { font-weight: 700; }
+dd { margin: 0; }
+.edu li { margin-bottom: 6px; }
+.edu ul { margin: 10px 0 0; padding-left: 18px; }
+
+.contact p { font-size: 1.1rem; }
+
+@media (max-width: 860px) {
+  .layout { grid-template-columns: 1fr; }
+  .side { padding: 40px 24px 32px; }
+  .side-inner { position: static; }
+  .side nav { grid-auto-flow: column; justify-content: start; gap: 18px; flex-wrap: wrap; }
+  main { padding: 40px 24px 56px; }
+  .job { grid-template-columns: 1fr; gap: 2px; }
+  dl { grid-template-columns: 1fr; gap: 2px; }
+  dd { margin-bottom: 10px; }
+}
+</style>
+</head>
+<body>
+<div class="layout">
+  <header class="side">
+    <div class="side-inner">
+      <h1>Jefferson Calizaya</h1>
+      <p class="role">Desenvolvedor júnior</p>
+      <p class="where">Formado em Ciências da Computação · Guarulhos, SP</p>
+      <nav aria-label="Seções">
+        <a href="#projeto">Projetos</a>
+        <a href="#experiencia">Experiência</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#formacao">Formação</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <div class="links">
+        <a href="mailto:jeffersoncalizaya09@gmail.com">jeffersoncalizaya09@gmail.com</a>
+        <a href="https://linkedin.com/in/jefferson-calizaya-aa3ab928b" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://wa.me/5511960233049" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="sobre">
+      <p class="lead">Sou formado em Ciências da Computação pela Unicid e procuro minha primeira posição como desenvolvedor. Gosto de entender o problema antes de escrever código e de entregar algo que funcione de verdade.</p>
+      <p>Estagiei na ALT360, onde monitorei plataformas e dei suporte a usuários. Antes disso, passei três anos atendendo clientes e fornecedores no negócio da minha família. Uso ferramentas de IA como apoio para criar, revisar e ajustar meus projetos.</p>
+    </section>
+
+    <section id="projeto">
+      <h2>Projetos</h2>
+      <article class="project">
+        <h3>Site para uma psicóloga</h3>
+        <p>Landing page criada para uma cliente que atende por consulta. O visitante entende o trabalho dela e marca uma conversa em poucos toques, pelo botão de WhatsApp.</p>
+        <p class="tech">Feito com HTML e CSS, com apoio de IA. Publicado na Netlify, em domínio próprio registrado no Registro.br.</p>
+        <a class="btn" href="https://psicologasirley.com.br" target="_blank" rel="noopener">Ver o site</a>
+      </article>
+      <article class="project" style="margin-top: 20px;">
+        <h3>Loja virtual de delivery (Nightbox)</h3>
+        <p>Site que fiz como teste para lojas virtuais, usando IA no desenvolvimento. É uma plataforma completa de vendas online, pensada para carregar rápido, funcionar bem no celular e deixar a compra fluida para o cliente.</p>
+        <ul style="margin: 0 0 14px; padding-left: 18px;">
+          <li>Vitrine dinâmica com navegação por categorias em carrossel.</li>
+          <li>Carrinho lateral com subtotal calculado em tempo real.</li>
+          <li>Sistema de cupons com desconto aplicado na hora.</li>
+          <li>Login e criação de conta, com validação de Gmail e recuperação de senha.</li>
+          <li>Checkout que exige login e gera um Pix instantâneo (QR Code no padrão BACEN), com integração ao SDK do Mercado Pago, sem expor dados sensíveis.</li>
+        </ul>
+        <p class="tech">TypeScript e JavaScript · Next.js 14 (App Router) e React 18 · Tailwind CSS (tema escuro responsivo) · API Routes do Next.js (Node.js) · Supabase (PostgreSQL) · Mercado Pago SDK · Vercel (deploy contínuo).</p>
+        <a class="btn" href="https://nighbox-delivery.vercel.app/" target="_blank" rel="noopener">Ver o site</a>
+      </article>
+    </section>
+
+    <section id="experiencia">
+      <h2>Experiência</h2>
+      <div class="job">
+        <div class="when">Abr 2025 – Jun 2026</div>
+        <div>
+          <h3>Estagiário de TI <span class="org">· ALT360</span></h3>
+          <ul>
+            <li>Monitorei plataformas de software e dispositivos móveis, reportando falhas para manter a operação funcionando.</li>
+            <li>Apoiei a programação e a manutenção de softwares internos.</li>
+            <li>Dei suporte a usuários, fazendo a triagem e a resolução das solicitações.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="job">
+        <div class="when">2021 – 2024</div>
+        <div>
+          <h3>Consultor <span class="org">· Modas AM, empresa familiar</span></h3>
+          <ul>
+            <li>Atendi clientes e negociei com fornecedores.</li>
+            <li>Fiz pesquisas de mercado para apoiar decisões de compra e preço.</li>
+            <li>Ajudei na gestão financeira e na organização dos registros do negócio.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="habilidades">
+      <h2>Habilidades</h2>
+      <dl>
+        <dt>Programação</dt><dd>Python, SQL, HTML, CSS, JavaScript</dd>
+        <dt>Segurança</dt><dd>Cyber Threat Intelligence</dd>
+        <dt>Suporte</dt><dd>Monitoramento de plataformas, triagem de chamados</dd>
+        <dt>Ferramentas</dt><dd>Netlify, ferramentas de IA para desenvolvimento</dd>
+        <dt>Idiomas</dt><dd>Português nativo, inglês e espanhol avançados</dd>
+      </dl>
+    </section>
+
+    <section id="formacao" class="edu">
+      <h2>Formação</h2>
+      <h3>Bacharelado em Ciências da Computação</h3>
+      <p class="tech">Unicid, São Paulo · 2022 – 2026</p>
+      <h3 style="margin-top: 24px;">Cursos</h3>
+      <ul>
+        <li>Cyber Threat Intelligence, arcX (2023)</li>
+        <li>Python, Curso em Vídeo (2023)</li>
+        <li>Lógica de Programação, Bradesco (2022)</li>
+        <li>Inglês, Wizard (2022 – atual)</li>
+      </ul>
+    </section>
+
+    <section id="contato" class="contact">
+      <h2>Vamos conversar</h2>
+      <p>Estou aberto a vagas júnior de desenvolvimento, dados, suporte e segurança da informação.</p>
+      <a class="btn" href="mailto:jeffersoncalizaya09@gmail.com">Enviar e-mail</a>
+    </section>
+  </main>
+</div>
+</body>
+</html>
